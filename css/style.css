@@ -1,0 +1,172 @@
+:root {
+  /* ==== Colors ==== */
+  --color-bg: #0B0D17;         /* Fundo principal (dark navy) */
+  --color-text: #FFFFFF;       /* Texto primário */
+  --color-text-secondary: #D0D6F9; /* Texto secundário / descrições */
+  --color-accent: #D0D6F9;     /* Acento claro (usado em botões/links) */
+  --color-highlight: #3E3FCE;  /* Lilás/azul-claro presente no exemplo */
+  --color-border: #383B4B;     /* Bordas sutis / separadores */
+
+  /* ==== Typography ==== */
+  --font-family-heading: 'Bellefair', serif;
+  --font-family-subheading: 'Barlow Condensed', sans-serif;
+  --font-family-body: 'Barlow', sans-serif;
+
+  /* Pesos */
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semi: 600;
+  --weight-bold: 700;
+
+  /* Tamanhos de fonte */
+  --font-size-xxl: 150px;  /* Títulos grandes - "EARTH" */
+  --font-size-xl: 100px;   /* Título médio */
+  --font-size-lg: 56px;    /* "VENUS" ou subtítulos */
+  --font-size-md: 28px;    /* Seções ("01 TYPOGRAPHY") */
+  --font-size-sm: 16px;    /* Corpo do texto */
+  --font-size-xs: 14px;    /* Detalhes / labels */
+
+  /* ==== Espaçamentos ==== */
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 48px;
+  --space-xl: 96px;
+
+  /* ==== Botões / Interativos ==== */
+  --button-bg: transparent;
+  --button-border: 1px solid rgba(255,255,255,0.25);
+  --button-hover-bg: rgba(255,255,255,0.1);
+  --button-radius: 50%; /* botões circulares "EXPLORE" */
+  --button-text-color: var(--color-text);
+
+  /* ==== Layout geral ==== */
+  --max-content-width: 1200px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Bellefair&family=Barlow+Condensed:wght@400;700&family=Barlow:wght@400;500&display=swap');
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+.container{
+    max-width: 1350px;
+    margin: 0 auto;
+}
+body{
+    background-image: url('../img/bitmap.webp');
+    background-position: center;
+    background-size:cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    overflow: hidden;
+    font-family: var(--font-family-body);
+}
+.header{
+    padding: 10px 55px;
+    display: flex;
+    align-items: center;
+    font-family: var(--font-family-heading);
+}
+.line{
+    background-color: #979797;
+    height: 1px; 
+    width: 473px;
+    margin-left: 64px;
+}
+.links{
+    display:flex;
+    align-items: center;
+}
+.links a{
+    text-decoration: none;
+    color: var(--color-text);
+    white-space: nowrap;
+    position: relative;
+}
+.links .active a::after{
+  content:'';
+  position:absolute;
+  left:-5px; right:0;
+  bottom:-18px;
+  margin:auto;
+  width:80px;
+  height:3px;
+  background-color:#fff;
+  opacity:.9;
+}   
+ul{
+    display: flex;
+    column-gap:48px;
+    margin:0;
+    list-style: none;
+    padding: 40px 120px;
+    background-color: #ffffff17 ;
+    backdrop-filter: blur(5px);
+}
+ul span{
+    font-weight: var(--weight-bold);
+}
+li:hover {
+    text-decoration: underline;
+    color: var(--color-text);
+    cursor: pointer;
+}
+.middle{
+    padding: 100px 165px;
+    display: flex;
+    justify-content: space-between;
+}
+.left-middle{
+    max-width: 450px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 1px;
+}
+.left-middle h1{
+    color: var(--color-text);
+    font-size: 150px;
+    font-family: var(--font-family-heading);
+    font-weight: normal;
+}
+.left-middle p{
+    color: var(--color-accent);
+
+}
+.left-middle p:first-child{
+    font-family: var(--font-family-subheading);
+    font-size: 16px;
+}
+.left-middle p:last-child{
+    font-family: var(--font-family-body);
+    line-height: 32px;
+    font-size:14px; 
+}
+.right-middle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.explore {
+  background-color: var(--color-text);
+  width: 250px;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.explore h2 {
+  background: transparent; /* remove o fundo dentro do texto */
+  color: var(--color-bg);  /* texto escuro sobre fundo claro */
+  font-size: 32px;
+  font-family: var(--font-family-heading);
+  font-weight: 400;
+  letter-spacing: 2px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
